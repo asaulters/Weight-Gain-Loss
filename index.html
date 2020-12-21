@@ -15,6 +15,8 @@ integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="ano
     </header>
     <form id="originalInputs" class="inputsOriginial">
         <h3> </h3>   
+        <label for="currentWeight">What is your current weight?</label><br>
+            <input type="number" id="currentWeight" name="current_Weight"><br>  
         <label for="previousCalAvg">How many calories do do you average daily?</label><br>
             <input type="number" id="currentCals" name="currentCalAvg"><br>             
         <label for="targetAmount">How much are you trying to gain?</label><br>
@@ -37,7 +39,7 @@ integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="ano
         </h4>
         <div class="weekOneWeight weekOne">
           <form id="weightCalInputForm">
-            <h3>Week One Weight</h3>
+            <h3>Weekly Weight</h3>
             <label for="wk1D1Wt">Day 1 Weight:</label>
                 <input type="number" id="wk1D1Wt"><br>
             <label for="wk1D2Wt">Day 2 Weight:</label>
@@ -54,7 +56,7 @@ integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="ano
                 <input type="number" id="wk1D7Wt"> <br>      
         </div>
         <div class="weekOneCals weekOne">
-            <h3>Week One Calories</h3>
+            <h3>Weekly Calories</h3>
             <label for="wk1D1Cal">Day 1 Calories:</label>
                 <input type="number" id="wk1D1Cal"><br>
             <label for="wk1D2Cal">Day 2 Calories:</label>
@@ -70,7 +72,7 @@ integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="ano
             <label for="wk1D7Cal">Day 7 Calories:</label>
                 <input type="number" id="wk1D7Cal">  <br>     
         </div>
-        <div class="weekTwoWeight weekTwo">
+        <!-- <div class="weekTwoWeight weekTwo">
             <h3>Week Two Weight</h3>
             <label for="wk2D1Wt">Day 1 Weight:</label>
                 <input type="number" id="wk2D1Wt"><br>
@@ -104,7 +106,7 @@ integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="ano
             <label for="wk2D7Cal">Day 7 Calories:</label>
             g
                 <input type="number" id="wk2D7Cal">  <br> <br>    
-        </div>
+        </div> -->
         <button type="submit" id="weightCalBtn" class="weeklybtn">Submit</button>
       </form>
     </section>
