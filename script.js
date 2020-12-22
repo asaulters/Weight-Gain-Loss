@@ -6,14 +6,16 @@ let originalAvgCals = document.querySelector('[name=currentCalAvg]');
 let amountPerWeek;
 let weeklyCalcButton = document.querySelector('.weeklybtn');
 let currentWeight = document.querySelector('[name=current_Weight]');
-
+let goalWkWt;
+let calcSection = document.getElementById(calculations);
+let goalCals;
 
 //functions
 function goalsInputAction(event) {
     //Prevent Submission
     event.preventDefault();
     //Goal statement
-    amountPerWeek = targetAmountInput.value / weeksLeftInput.value;
+    amountPerWeek = parseInt(targetAmountInput.value / weeksLeftInput.value);
     document.querySelector('#goalsOutput').innerHTML = `Based upon your answers, 
     you want to gain ${targetAmountInput.value}lbs in ${weeksLeftInput.value} weeks. 
     To do this you will need to gain ${amountPerWeek}lbs a week.
@@ -60,15 +62,37 @@ function weeklyInputCalc(event){
    //Checks if working correctly
    console.log(avgCal);
    console.log(amountPerWeek);
+   console.log(currentWeight.value);
+   goalWkWt = parseInt(currentWeight.value) + parseInt(amountPerWeek);
+   console.log(goalWkWt);
    //Calcs
-   if (avgWt == (currentWeight + amountPerWeek)) {
-       console.log("You're on the right track! Keep your calories the same.")
-   } else if ( avgWt > (currentWeight + amountPerWeek + .5)){
-       console.log('You are gaining too much. Cut down your calories')
-   } else if(
-       console.log('You need to be taking more calories in!')
-   );
+   if (avgWt == goalWkWt) {
+       goalCals = "You're on the right track! Keep your calories the same."
+   } else if (avgWt > goalWkWt - .5 && avgWt < goalWkWt + .5){
+       goalCals ="You're on the right track! Keep your calories the same."
+   } else if ( avgWt > goalWkWt + .5){
+       goalCals ='You are gaining too much. Cut down your daily calories by 500.'
+    } else {
+       goalCals = "You aren't gaining enough weight to stay on track. Add 500 calories to your daily diet to stay on track! "
+    };
 
+   //Calculations
+   if (avgWt == goalWkWt) {
+    console.log("You're on the right track! Keep your calories the same.")
+} else if (avgWt > goalWkWt - .5 && avgWt < goalWkWt + .5){
+    console.log("You're on the right track! Keep your calories the same. sss")
+} else if ( avgWt > goalWkWt + .5){
+    console.log('You are gaining too much. Cut down your calories')
+ } else {
+ console.log('You need to be taking more calories in!')
+ };
+   document.querySelector('#calculations').innerHTML = `Great job this week! We have 
+   taken your goals and how you did this week and figured out what you should be doing
+   next week.<br><br>
+   You started out this week at ${currentWeight.value} and averaged ${avgWt} at the end
+   of the week. Your goal was to end the week at ${goalWkWt}.<br><br>
+   You took in an average of ${avgCal} calories per day.<br><br>
+   Taking all of this into account, ${goalCals}.`
 }
 
 
