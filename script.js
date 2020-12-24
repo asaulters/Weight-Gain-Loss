@@ -93,6 +93,23 @@ function weeklyInputCalc(event){
    of the week. Your goal was to end the week at ${goalWkWt}.<br><br>
    You took in an average of ${avgCal} calories per day.<br><br>
    Taking all of this into account, ${goalCals}.`
+
+   //reset
+   document.getElementById('wk1D1Wt').value = "";
+   document.getElementById('wk1D2Wt').value = "";
+   document.getElementById('wk1D3Wt').value = "";
+   document.getElementById('wk1D4Wt').value = "";
+   document.getElementById('wk1D5Wt').value = "";
+   document.getElementById('wk1D6Wt').value = "";
+   document.getElementById('wk1D7Wt').value = "";
+   document.getElementById('wk1D1Cal').value = "";
+   document.getElementById('wk1D2Cal').value = "";
+   document.getElementById('wk1D3Cal').value = "";
+   document.getElementById('wk1D4Cal').value = "";
+   document.getElementById('wk1D5Cal').value = "";
+   document.getElementById('wk1D6Cal').value = "";
+   document.getElementById('wk1D7Cal').value = "";
+
 }
 
 
