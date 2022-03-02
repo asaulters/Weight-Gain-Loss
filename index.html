@@ -1,124 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" 
-integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous">
-    
-    <title>Weight Gain Application</title>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  background-color: #70566d;
+  padding: 20px;
+  text-align: center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.column.side {
+  width: 25%;
+}
+
+.column.middle {
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Weight Gain Application</h1>
-    </header>
-    <form id="originalInputs" class="inputsOriginial">
-        <h3> </h3>   
-        <label for="currentWeight">What is your current weight?</label><br>
-            <input type="number" id="currentWeight" name="current_Weight"><br>  
-        <label for="previousCalAvg">How many calories do do you average daily?</label><br>
-            <input type="number" id="currentCals" name="currentCalAvg"><br>             
-        <label for="targetAmount">How much are you trying to gain?</label><br>
-            <input type="number" id="targetAmount" name='targetWeightAmount'><br>
-        <label for="weekAmount">How many weeks do you want to strive to hit your target by?</label><br>
-            <input type="number" id="weekAmount" name="weeksLeftAmount"><br>
-        <button type="submit" class="originalInputBtn">Submit</button>
-    </form>
-    <section id="goalSection">
-        <h3>Goals</h3>
-        <h4 id="goalsOutput">
-        </h4>
-    </section>
 
-    <section id="weeklyInputs">
-        <h2>Weekly Inputs</h2>
-        <h4>
-            In this section, please enter each day's weight and calorie count. We will take every two weeks and 
-            adjust based upon your averages. Please keep track of your daily weight and calories.
-        </h4>
-        <div class="weekOneWeight weekOne">
-          <form id="weightCalInputForm">
-            <h3>Weekly Weight</h3>
-            <label for="wk1D1Wt">Day 1 Weight:</label>
-                <input type="number" id="wk1D1Wt"><br>
-            <label for="wk1D2Wt">Day 2 Weight:</label>
-                <input type="number" id="wk1D2Wt"><br> 
-            <label for="wk1D3Wt">Day 3 Weight:</label>
-                <input type="number" id="wk1D3Wt"><br>
-            <label for="wk1D4Wt">Day 4 Weight:</label>
-                <input type="number" id="wk1D4Wt"> <br>
-            <label for="wk1D5Wt">Day 5 Weight:</label>
-                <input type="number" id="wk1D5Wt">  <br> 
-            <label for="wk1D6Wt">Day 6 Weight:</label>
-                <input type="number" id="wk1D6Wt">  <br>
-            <label for="wk1D7Wt">Day 7 Weight:</label>
-                <input type="number" id="wk1D7Wt"> <br>      
-        </div>
-        <div class="weekOneCals weekOne">
-            <h3>Weekly Calories</h3>
-            <label for="wk1D1Cal">Day 1 Calories:</label>
-                <input type="number" id="wk1D1Cal"><br>
-            <label for="wk1D2Cal">Day 2 Calories:</label>
-                <input type="number" id="wk1D2Cal"> <br>
-            <label for="wk1D3Cal">Day 3 Calories:</label>
-                <input type="number" id="wk1D3Cal"><br>
-            <label for="wk1D4Cal">Day 4 Calories:</label>
-                <input type="number" id="wk1D4Cal"> <br>
-            <label for="wk1D5Cal">Day 5 Calories:</label>
-                <input type="number" id="wk1D5Cal">  <br> 
-            <label for="wk1D6Cal">Day 6 Calories:</label>
-                <input type="number" id="wk1D6Cal">  <br>
-            <label for="wk1D7Cal">Day 7 Calories:</label>
-                <input type="number" id="wk1D7Cal">  <br>     
-        </div>
-        <!-- <div class="weekTwoWeight weekTwo">
-            <h3>Week Two Weight</h3>
-            <label for="wk2D1Wt">Day 1 Weight:</label>
-                <input type="number" id="wk2D1Wt"><br>
-            <label for="wk2D2Wt">Day 2 Weight:</label>
-                <input type="number" id="wk2D2Wt"> <br>
-            <label for="wk2D3Wt">Day 3 Weight:</label>
-                <input type="number" id="wk2D3Wt"><br>
-            <label for="wk2D4Wt">Day 4 Weight:</label>
-                <input type="number" id="wk2D4Wt"> <br>
-            <label for="wk2D5Wt">Day 5 Weight:</label>
-                <input type="number" id="wk2D5Wt"> <br>  
-            <label for="wk2D6Wt">Day 6 Weight:</label>
-                <input type="number" id="wk2D6Wt"> <br> 
-            <label for="wk2D7Wt">Day 7 Weight:</label>
-                <input type="number" id="wk2D7Wt"> <br>     
-        </div>
-        <div class="weekTwoCals weekTwo">
-            <h3>Week Two Calories</h3>
-            <label for="wk2D1Cal">Day 1 Calories:</label>
-                <input type="number" id="wk2D1Cal"><br>
-            <label for="wk2D2Cal">Day 2 Calories:</label>
-                <input type="number" id="wk2D2Cal"> <br>
-            <label for="wk2D3Cal">Day 3 Calories:</label>
-                <input type="number" id="wk2D3Cal"><br>
-            <label for="wk2D4Cal">Day 4 Calories:</label>
-                <input type="number" id="wk2D4Cal"> <br>
-            <label for="wk2D5Cal">Day 5 Calories:</label>
-                <input type="number" id="wk2D5Cal">   <br>
-            <label for="wk2D6Cal">Day 6 Calories:</label>
-                <input type="number" id="wk2D6Cal">  <br>
-            <label for="wk2D7Cal">Day 7 Calories:</label>
-            g
-                <input type="number" id="wk2D7Cal">  <br> <br>    
-        </div> -->
-       <br><br> <button type="submit" id="weightCalBtn" class="weeklybtn">Submit</button>
-      </form>
-    </section>
-    
-    <section><br>
-        <h3>Summary</h3>
-        <div id="calculations">
+<div class="header">
+  <h1>Diet</h1>
+  <p>his is where food and diet will go</p>
+</div>
 
-        </div>
-    </section>
+<div class="topnav">
+  <a href="WebsiteHome.html">Home</a>
+  <a href="Workout.html">Workout</a>
+  <a href="Results.html">Results</a>
+</div>
 
-    </section>
-<script src="script.js"></script>
+<div class="row">
+  <div class="column side">
+    <h2>Side</h2>
+    <p>1</p>
+  </div>
+  
+  <div class="column middle">
+    <h2>Main Content</h2>
+    <p>1</p>
+    <p>2</p>
+  </div>
+  
+  <div class="column side">
+    <h2>Side</h2>
+    <p>2</p>
+  </div>
+</div>
+  
 </body>
 </html>
+
